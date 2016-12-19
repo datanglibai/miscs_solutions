@@ -1,6 +1,8 @@
+/*
 #pragma once
 #include <stdio.h>
 #include <tchar.h>
+*/
 #include "iostream";
 #include <vector>;
 
@@ -24,10 +26,6 @@ public:
         this->next = next;
     }
 };
-
-//Node<string> n1;
-//Node<int> n2;
-//Node<float> n3;
 
 template<typename T>
 class SymbolTable
@@ -54,8 +52,7 @@ public:
         for (node_type* x = first; x != NULL; x = x->next)
             if (key == x->key)
                 return x->val; // search hit
-        return NULL;
-        //return T();
+        return NULL;       
     }
     
     void remove(string key) {}
@@ -71,7 +68,7 @@ public:
         return "smallest key greater than or equal to key";
     }
     int rank(string key) {
-        return 0;// number of keys less than key
+        return 0; // number of keys less than key
     }
     string select(int k) {
         return "key of rank k";
@@ -82,7 +79,7 @@ public:
     }
     int size(string lo, string hi)
     {
-        //  number of keys in[lo..hi]
+        //  number of keys in[lo,hi]
         return 0;
     }
 
@@ -110,8 +107,7 @@ void testST()
 }
 
 void frenquencyCounter()
-{
-    
+{    
     SymbolTable<int> st;
     vector<string> testdata = { "key1","key2", "key3", "key6", "key9", "key8", "key7", "key5", "key4" };
     for (size_t i = 0; i < testdata.size(); i++)
@@ -124,7 +120,7 @@ void frenquencyCounter()
         }
     }
 }
-int main()
+int main(int argc, char *argv[])
 {   
     testST();
     frenquencyCounter();
